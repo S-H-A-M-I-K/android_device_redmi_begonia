@@ -15,10 +15,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from begonia device
 $(call inherit-product, device/redmi/begonia/device.mk)
 
-# Inherit some common LineageOS stuff
+# Inherit some common Rice stuff
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-TARGET_SUPPORTS_QUICK_TAP := true
-TARGET_DOESNT_LIKE_FLIPENDO := true
+
 
 # Inherit some extras stuff
 $(call inherit-product-if-exists, vendor/extras/extras.mk)
@@ -32,8 +31,17 @@ PRODUCT_AAPT_CONFIG := normal
 PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Boot Animation
-TARGET_SCREEN_HEIGHT := 2340
-TARGET_SCREEN_WIDTH := 1080
+SUSHI_BOOTANIMATION  := 1080
+
+# Rice Flags
+WITH_GMS := true
+RICE_OFFICIAL := true
+RICE_DEVICE := begonia
+RICE_MAINTAINER := Shamik
+TARGET_ENABLE_BLUR := true
+TARGET_SUPPORTS_QUICK_TAP := true
+TARGET_FACE_UNLOCK_SUPPORTED := true
+TARGET_BUILD_GRAPHENEOS_CAMERA := true
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := begonia
